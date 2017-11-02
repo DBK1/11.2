@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../11.2/public/javascripts/jquery.min.js"></script>
+</head>
+<body>
+<input type="text" id="tit">
+<input type="text" id="con">
+<button id="but">提交</button>
+</body>
+<script>
+    $(function () {
+        $("#but").click(function () {
+        $.ajax({
+            url:'http://localhost:3000/item/list',
+            type:'post',
+            data:{a:tit.value,b:con.value},
+            success:function(e){
+                console.log(e);
+            }
+        })
+        })
+    })
+</script>
+</html>

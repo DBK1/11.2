@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../11.2/public/javascripts/jquery.min.js"></script>
+</head>
+<body>
+
+</body>
+<script>
+    $(function () {
+        $.ajax({
+            url:'http://localhost:3000/item/list2',
+            type:'post',
+            success:function(e){
+                console.log(e);
+                for(var i in e){
+                $("body").append("<p>"+e[i].name+e[i].score+"</p>")
+                }
+            }
+        })
+    })
+</script>
+</html>
